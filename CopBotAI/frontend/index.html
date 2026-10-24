@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<title>CopBot AI — Chennai Police Virtual Assistant</title>
+<meta name="description" content="CopBot AI — an intelligent police assistant chatbot powered by Groq & Ollama, with real IPC legal data, emergency contacts and station directories." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-theme="dark">
+
+<div class="app-shell">
+
+  <!-- ===================== Sidebar ===================== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="brand">
+        <span class="brand-badge">🛡️</span>
+        <div class="brand-text">
+          <strong>CopBot AI</strong>
+          <small>Police Virtual Assistant</small>
+        </div>
+      </div>
+      <button class="icon-btn sidebar-close" id="sidebarClose" aria-label="Close sidebar">✕</button>
+    </div>
+
+    <button class="new-chat-btn" id="newChatBtn">
+      <span class="plus">+</span> New Conversation
+    </button>
+
+    <div class="quick-actions">
+      <button class="quick-chip" data-prompt="What are the emergency helpline numbers in Chennai?">🚨 Emergency Numbers</button>
+      <button class="quick-chip" data-prompt="How do I file an FIR for theft?">📝 File an FIR</button>
+      <button class="quick-chip" data-prompt="What is the punishment under IPC 302?">⚖️ IPC Lookup</button>
+      <button class="quick-chip" data-prompt="Find the nearest police station in Chennai">📍 Nearby Stations</button>
+      <button class="quick-chip" id="fileComplaintChip">🧾 File a Complaint</button>
+      <button class="quick-chip" id="trackComplaintChip">🔎 Track a Complaint</button>
+    </div>
+
+    <div class="sidebar-section-title">Recent Chats</div>
+    <div class="session-list" id="sessionList"><!-- injected --></div>
+
+    <div class="sidebar-footer">
+      <div class="provider-status" id="providerStatus">
+        <div class="status-row"><span class="dot" id="dotGroq"></span> Groq</div>
+        <div class="status-row"><span class="dot" id="dotOllama"></span> Ollama</div>
+      </div>
+      <div style="display:flex; gap:4px;">
+        <a class="icon-btn" href="admin.html" title="Analytics dashboard">📊</a>
+        <button class="icon-btn" id="themeToggle" title="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="sidebar-scrim" id="sidebarScrim"></div>
+
+  <!-- ===================== Main chat area ===================== -->
+  <main class="main">
+
+    <header class="topbar">
+      <button class="icon-btn sidebar-open" id="sidebarOpen" aria-label="Open sidebar">☰</button>
+      <div class="topbar-title">
+        <h1 id="chatTitle">New Conversation</h1>
+        <span class="topbar-subtitle">Ask about FIRs, IPC sections, emergencies &amp; more</span>
+      </div>
+
+      <div class="topbar-controls">
+        <div class="select-wrap">
+          <select id="providerSelect" title="AI provider">
+            <option value="auto">Auto (Groq → Ollama)</option>
+            <option value="groq">Groq</option>
+            <option value="ollama">Ollama</option>
+            <option value="rag_only">Offline (Knowledge Base)</option>
+          </select>
+        </div>
+        <button class="icon-btn" id="clearChatBtn" title="Clear conversation">🗑️</button>
+      </div>
+    </header>
+
+    <section class="chat-scroll" id="chatScroll">
+      <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-badge">🛡️</div>
+        <h2>Namaste! I'm CopBot AI</h2>
+        <p>Your intelligent assistant for Chennai City Police — grounded in real FAQ, IPC legal
+           sections, station &amp; emergency data, and powered by Groq or a local Ollama model.</p>
+
+        <div class="suggestion-grid">
+          <button class="suggestion-card" data-prompt="How do I file a complaint for a lost mobile phone?">
+            <span class="s-icon">📱</span>
+            <span class="s-title">Lost Phone Complaint</span>
+            <span class="s-desc">Steps to report and file an FIR</span>
+          </button>
+          <button class="suggestion-card" data-prompt="What is the punishment for IPC section 379?">
+            <span class="s-icon">⚖️</span>
+            <span class="s-title">IPC 379 — Theft</span>
+            <span class="s-desc">Look up sections &amp; punishments</span>
+          </button>
+          <button class="suggestion-card" data-prompt="I witnessed a road accident, what should I do?">
+            <span class="s-icon">🚗</span>
+            <span class="s-title">Road Accident</span>
+            <span class="s-desc">Emergency response guidance</span>
+          </button>
+          <button class="suggestion-card" data-prompt="How can I report police misconduct?">
+            <span class="s-icon">🧾</span>
+            <span class="s-title">Report Misconduct</span>
+            <span class="s-desc">Internal affairs &amp; process</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="messages" id="messages"></div>
+    </section>
+
+    <div class="emergency-banner" id="emergencyBanner" hidden>
+      🚨 <strong>This sounds urgent.</strong> If anyone is in immediate danger, call
+      <a href="tel:100">100 (Police)</a>, <a href="tel:108">108 (Ambulance)</a> or <a href="tel:101">101 (Fire)</a> right now.
+      <button id="dismissEmergency">✕</button>
+    </div>
+
+    <form class="composer" id="composerForm">
+      <button type="button" class="icon-btn mic-btn" id="micBtn" title="Voice input">🎙️</button>
+      <textarea id="composerInput" rows="1" maxlength="2000"
+        placeholder="Ask CopBot about FIRs, IPC sections, emergencies, or anything else..."></textarea>
+      <span class="char-counter" id="charCounter">0/2000</span>
+      <button type="submit" class="send-btn" id="sendBtn" title="Send">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+      </button>
+    </form>
+    <div class="disclaimer">CopBot AI can make mistakes. Verify critical legal or emergency information with your local police station.</div>
+  </main>
+</div>
+
+<!-- ===================== Complaint tracker modal ===================== -->
+<div class="modal-overlay" id="complaintModal" hidden>
+  <div class="modal">
+    <div class="modal-header">
+      <h3>🔎 Track a Complaint</h3>
+      <button class="icon-btn" id="closeComplaintModal">✕</button>
+    </div>
+    <p class="modal-desc">Enter a Complaint ID to check its live status from our records.</p>
+    <form id="complaintForm">
+      <input type="text" id="complaintIdInput" placeholder="e.g. 410932" required />
+      <button type="submit">Check Status</button>
+    </form>
+    <div id="complaintResult"></div>
+  </div>
+</div>
+
+<!-- ===================== File a complaint modal ===================== -->
+<div class="modal-overlay" id="fileComplaintModal" hidden>
+  <div class="modal">
+    <div class="modal-header">
+      <h3>🧾 File a Complaint</h3>
+      <button class="icon-btn" id="closeFileComplaintModal">✕</button>
+    </div>
+    <p class="modal-desc">This registers a demo complaint in CopBot's local database and gives you a trackable ID. For real emergencies, call 100 instead.</p>
+    <form id="fileComplaintForm" class="stacked-form">
+      <input type="text" id="fcCrimeType" placeholder="Crime type (e.g. Theft, Cybercrime) *" required maxlength="120" />
+      <textarea id="fcDescription" placeholder="Brief description of what happened" rows="3" maxlength="2000"></textarea>
+      <input type="text" id="fcLocation" placeholder="Location / area" maxlength="200" />
+      <div class="form-row">
+        <input type="text" id="fcName" placeholder="Your name (optional)" maxlength="120" />
+        <input type="text" id="fcContact" placeholder="Contact number (optional)" maxlength="40" />
+      </div>
+      <button type="submit">Submit Complaint</button>
+    </form>
+    <div id="fileComplaintResult"></div>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.8/dist/purify.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

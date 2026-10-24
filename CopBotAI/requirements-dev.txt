@@ -1,0 +1,5 @@
+# Extra dependencies needed only for running the test suite / local dev.
+# Install with: pip install -r requirements.txt -r requirements-dev.txt
+-r requirements.txt
+pytest==8.3.4
+httpx==0.28.1

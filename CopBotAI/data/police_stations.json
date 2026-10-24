@@ -1,0 +1,144 @@
+{
+    "Sheet1": [
+        {
+            "District": "Chennai",
+            "Police Station Name": "Teynampet Police Station",
+            "Contact Number": "044-23452345",
+            "Email": "teynampet.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "13.0443, 80.2456"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Anna Nagar Police Station",
+            "Contact Number": "044-23459876",
+            "Email": "annanagar.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "13.0865, 80.2174"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Adyar Police Station",
+            "Contact Number": "044-24452367",
+            "Email": "adyar.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "13.0051, 80.2550"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Kodambakkam Police Station",
+            "Contact Number": "044-23651234",
+            "Email": "kodambakkam.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "13.0556, 80.2221"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Kilpauk Police Station",
+            "Contact Number": "044-26459876",
+            "Email": "kilpauk.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "13.0802, 80.2491"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Triplicane Police Station",
+            "Contact Number": "044-28547890",
+            "Email": "triplicane.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "13.0620, 80.2790"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Mylapore Police Station",
+            "Contact Number": "044-24642356",
+            "Email": "mylapore.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "13.0335, 80.2680"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Guindy Police Station",
+            "Contact Number": "044-22356789",
+            "Email": "guindy.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "13.0067, 80.2200"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Nungambakkam Police Station",
+            "Contact Number": "044-28342345",
+            "Email": "nungambakkam.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "13.0643, 80.2451"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Velachery Police Station",
+            "Contact Number": "044-22431234",
+            "Email": "velachery.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "12.9815, 80.2207"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Taramani Police Station",
+            "Contact Number": "044-22566789",
+            "Email": "taramani.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "12.9801, 80.2442"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Royapettah Police Station",
+            "Contact Number": "044-28523456",
+            "Email": "royapettah.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "13.0550, 80.2701"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Washermanpet Police Station",
+            "Contact Number": "044-25956789",
+            "Email": "washermanpet.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "13.1234, 80.2932"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Perambur Police Station",
+            "Contact Number": "044-26751234",
+            "Email": "perambur.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "13.1180, 80.2481"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Aminjikarai Police Station",
+            "Contact Number": "044-26236789",
+            "Email": "aminjikarai.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "13.0794, 80.2229"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Thousand Lights Police Station",
+            "Contact Number": "044-28234567",
+            "Email": "thousandlights.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "13.0625, 80.2603"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Saidapet Police Station",
+            "Contact Number": "044-22397865",
+            "Email": "saidapet.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "13.0222, 80.2185"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Thiruvanmiyur Police Station",
+            "Contact Number": "044-24512345",
+            "Email": "thiruvanmiyur.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "12.9803, 80.2592"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Kotturpuram Police Station",
+            "Contact Number": "044-24455678",
+            "Email": "kotturpuram.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "13.0089, 80.2467"
+        },
+        {
+            "District": "Chennai",
+            "Police Station Name": "Mandaveli Police Station",
+            "Contact Number": "044-24667890",
+            "Email": "mandaveli.ps@tnpolice.gov.in",
+            "Location (Lat, Long)": "13.0280, 80.2687"
+        }
+    ]
+}

@@ -1,0 +1,124 @@
+{
+    "Sheet1": [
+        {
+            "Service": "Police Emergency",
+            "Emergency Number": "100",
+            "Availability": "Available 24/7",
+            "Department": "Chennai Police Department"
+        },
+        {
+            "Service": "Ambulance",
+            "Emergency Number": "108",
+            "Availability": "Available 24/7",
+            "Department": "Tamil Nadu Emergency Medical Services"
+        },
+        {
+            "Service": "Fire and Rescue",
+            "Emergency Number": "101",
+            "Availability": "Available 24/7",
+            "Department": "Tamil Nadu Fire and Rescue Services"
+        },
+        {
+            "Service": "Women Helpline",
+            "Emergency Number": "1091",
+            "Availability": "Available 24/7",
+            "Department": "Tamil Nadu Women Helpline"
+        },
+        {
+            "Service": "Child Helpline",
+            "Emergency Number": "1098",
+            "Availability": "Available 24/7",
+            "Department": "ChildLine India Foundation"
+        },
+        {
+            "Service": "Traffic Helpline",
+            "Emergency Number": "103",
+            "Availability": "Available 24/7",
+            "Department": "Chennai Traffic Police"
+        },
+        {
+            "Service": "Senior Citizen Helpline",
+            "Emergency Number": "1253",
+            "Availability": "Available 24/7",
+            "Department": "Chennai Police Senior Citizens Support"
+        },
+        {
+            "Service": "Cyber Crime Helpline",
+            "Emergency Number": "1930",
+            "Availability": "Available 24/7",
+            "Department": "Chennai Cyber Crime Cell"
+        },
+        {
+            "Service": "Railway Helpline",
+            "Emergency Number": "139",
+            "Availability": "Available 24/7",
+            "Department": "Indian Railways Chennai Division"
+        },
+        {
+            "Service": "Tourist Helpline",
+            "Emergency Number": "1363",
+            "Availability": "Available 24/7",
+            "Department": "Tamil Nadu Tourism Department"
+        },
+        {
+            "Service": "Electricity Board Helpline",
+            "Emergency Number": "1912",
+            "Availability": "Available 24/7",
+            "Department": "Tamil Nadu Electricity Board (TNEB)"
+        },
+        {
+            "Service": "Water Supply Helpline",
+            "Emergency Number": "1916",
+            "Availability": "Available 24/7",
+            "Department": "Chennai Metro Water Supply"
+        },
+        {
+            "Service": "Disaster Management",
+            "Emergency Number": "1070",
+            "Availability": "Available 24/7",
+            "Department": "Tamil Nadu State Disaster Management Authority"
+        },
+        {
+            "Service": "Flood Control Helpline",
+            "Emergency Number": "1077",
+            "Availability": "Available 24/7",
+            "Department": "Chennai Corporation"
+        },
+        {
+            "Service": "Gas Leakage Emergency",
+            "Emergency Number": "1906",
+            "Availability": "Available 24/7",
+            "Department": "Bharat Gas, Indane, HP Gas"
+        },
+        {
+            "Service": "Poison Control Helpline",
+            "Emergency Number": "1800-425-1213",
+            "Availability": "Available 24/7",
+            "Department": "National Poison Information Centre"
+        },
+        {
+            "Service": "Coastal Security Helpline",
+            "Emergency Number": "1093",
+            "Availability": "Available 24/7",
+            "Department": "Tamil Nadu Coastal Security Group"
+        },
+        {
+            "Service": "Airport Helpline",
+            "Emergency Number": "044-22560551",
+            "Availability": "Available 24/7",
+            "Department": "Chennai International Airport"
+        },
+        {
+            "Service": "Animal Rescue Helpline",
+            "Emergency Number": "044-22300666",
+            "Availability": "Available 24/7",
+            "Department": "Blue Cross of India"
+        },
+        {
+            "Service": "Forest Fire Helpline",
+            "Emergency Number": "1926",
+            "Availability": "Available 24/7",
+            "Department": "Tamil Nadu Forest Department"
+        }
+    ]
+}
